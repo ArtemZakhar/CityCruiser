@@ -1,0 +1,87 @@
+html,
+body {
+  scroll-behavior: smooth !important;
+}
+
+.page {
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background-color: $black-900;
+  color: #fff;
+
+  &__menu {
+    display: none;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    min-height: 100vh;
+    background-color: $grey-500;
+    pointer-events: none;
+    overflow: hidden;
+
+    &:target {
+      display: block;
+      z-index: 2;
+      pointer-events: all;
+    }
+  }
+
+  &__main {
+    margin-block: 36px;
+
+    @include on-tablet {
+      margin-block: 84px;
+    }
+  }
+}
+
+.container {
+  @include body-container;
+}
+
+.title {
+  @include title-styles;
+}
+
+.mb-80 {
+  margin-bottom: 82px;
+
+  @include on-tablet {
+    margin-bottom: 120px;
+  }
+
+  @include on-desctop {
+    margin-bottom: 180px;
+  }
+}
+
+.mb-90 {
+  margin-bottom: 92px;
+
+  @include on-tablet {
+    margin-bottom: 126px;
+  }
+
+  @include on-desctop {
+    margin-bottom: 164px;
+  }
+}
+
+.mb-120 {
+  margin-bottom: 120px;
+
+  @include on-tablet {
+    margin-bottom: 102px;
+  }
+
+  @include on-desctop {
+    margin-bottom: 164px;
+  }
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+}

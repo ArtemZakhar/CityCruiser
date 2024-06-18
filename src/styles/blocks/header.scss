@@ -1,0 +1,107 @@
+.header {
+  background: right / cover no-repeat url('../images/bg/main.png');
+
+  min-height: 100vh;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    display: flex;
+
+    &-img {
+      @include logo-dimensions;
+    }
+  }
+
+  &__nav-list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 24px;
+  }
+
+  &__item {
+    &--long {
+      display: flex;
+      align-items: center;
+      position: relative;
+    }
+  }
+
+  &__link {
+    position: absolute;
+    left: -80px;
+    right: -50px;
+    bottom: -35px;
+    opacity: 0;
+    pointer-events: none;
+
+    @include on-tablet {
+      margin-left: 150px;
+      padding-left: 200px;
+      right: 0;
+      left: -350px;
+      bottom: 2px;
+    }
+  }
+
+  &__call-icon {
+    background: left 100% bottom 50% / contain no-repeat
+      url('../images/icons/phone-call.png');
+    position: relative;
+    padding-bottom: 20px;
+    cursor: pointer;
+
+    @include on-tablet {
+      margin-left: 150px;
+      padding-left: 200px;
+    }
+
+    @include icons-dimensions;
+  }
+
+  &__call-icon:hover > .header__link {
+    transition: opacity 300ms;
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &__menu-icon {
+    display: block;
+    background: center / cover no-repeat url('../images/icons/menu.png');
+    cursor: pointer;
+
+    @include icons-dimensions;
+
+    &:hover {
+      background: center / cover no-repeat url('../images/icons/menu-hover.png');
+    }
+  }
+
+  &__title {
+    margin-bottom: 88px;
+    font-weight: 700;
+    font-size: 33px;
+    text-align: center;
+    color: #fff;
+
+    @include on-tablet {
+      font-size: 64px;
+    }
+
+    @include on-desctop {
+      font-size: 80px;
+    }
+  }
+}
